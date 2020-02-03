@@ -12,6 +12,7 @@ public class Game extends JFrame {
         add(board);
         pack();
 
+        board.setUp();
         setLocationRelativeTo(null);
     }
     public static void main(String[] args){
