@@ -13,6 +13,7 @@ public class Board extends JPanel implements ActionListener {
 
 
 
+
     public Board(Game game){
         this.game = game;
         setPreferredSize(new Dimension(900,900));
@@ -22,11 +23,14 @@ public class Board extends JPanel implements ActionListener {
     }
     public void setUp(){
 //        ArrayList<Snake> snake = new ArrayList<Snake>();
+//        food = new Food(this);
         food = new Food(this);
         snake = new Snake(this);
         timer = new Timer(1000/20,this);
         timer.start();
     }
+
+
 
 
 
@@ -40,10 +44,9 @@ public class Board extends JPanel implements ActionListener {
             snake.moveDown();
         }
         else if (game.isUp()){
-            snake.moveUP();
+            snake.moveUp();
         }
-
-
+        food.setLocation(this);
 
         System.out.println("Game is running");
         repaint();
@@ -54,7 +57,6 @@ public class Board extends JPanel implements ActionListener {
         super.paintComponent(g);
         snake.paint(g);
         food.paint(g);
-
 
     }
 }

@@ -16,7 +16,7 @@ public class Snake {
     public void moveRight(){
         x+=dx;
     }
-    public void moveUP(){
+    public void moveUp(){
         y-=dy;
     }
     public void moveDown(){
