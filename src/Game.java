@@ -14,6 +14,7 @@ public class Game extends JFrame implements KeyListener {
         board = new Board(this);
         add(board);
         pack();
+        addKeyListener(this);
 
         board.setUp();
         setLocationRelativeTo(null);
@@ -21,9 +22,9 @@ public class Game extends JFrame implements KeyListener {
     public static void main(String[] args){
        new Game();
    }
-   public void paintComponent(Graphics g){
-        super.paintComponents(g);
-   }
+//   public void paintComponent(Graphics g){
+//        super.paintComponents(g);
+//   }
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -70,5 +71,6 @@ public class Game extends JFrame implements KeyListener {
     public boolean isRight() {
         return right;
     }
+    public boolean isUp(){return up;}
 
 }

@@ -32,12 +32,18 @@ public class Board extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (game.isLeft())
-            snake.moveLeft();
-        if (game.isRight())
-            snake.moveRight();
-        else
-            snake.moveLeft();
+        if (game.isLeft()){
+            snake.moveLeft();}
+        else if (game.isRight()){
+            snake.moveRight();}
+        else if(game.isDown()){
+            snake.moveDown();
+        }
+        else if (game.isUp()){
+            snake.moveUP();
+        }
+
+
 
         System.out.println("Game is running");
         repaint();
@@ -48,7 +54,6 @@ public class Board extends JPanel implements ActionListener {
         super.paintComponent(g);
         snake.paint(g);
         food.paint(g);
-
 
 
     }

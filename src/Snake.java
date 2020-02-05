@@ -17,10 +17,10 @@ public class Snake {
         x+=dx;
     }
     public void moveUP(){
-
+        y-=dy;
     }
     public void moveDown(){
-
+        y+=dy;
     }
 
 
