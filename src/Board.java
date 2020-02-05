@@ -29,6 +29,10 @@ public class Board extends JPanel implements ActionListener {
         timer = new Timer(1000/20,this);
         timer.start();
     }
+    public void checkCollisions(){
+
+
+    }
 
 
 
@@ -36,6 +40,7 @@ public class Board extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        checkCollisions();
         if (game.isLeft()){
             snake.moveLeft();}
         else if (game.isRight()){
