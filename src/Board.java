@@ -23,13 +23,21 @@ public class Board extends JPanel implements ActionListener {
     }
     public void setUp(){
 //        ArrayList<Snake> snake = new ArrayList<Snake>();
-//        food = new Food(this);
         food = new Food(this);
         snake = new Snake(this);
         timer = new Timer(1000/20,this);
         timer.start();
     }
     public void checkCollisions(){
+        if (snake.getX() >= this.getWidth() || snake.getX() <= 0 ){
+            snake.setLocation(this);
+        }
+        if(snake.getY() >= this.getHeight() || snake.getY() <= 0){
+            snake.setLocation(this);
+        }
+       if(snake.getBounds().intersects(food.getBounds())){
+           food.setLocation(this);
+       }
 
 
     }
@@ -51,7 +59,7 @@ public class Board extends JPanel implements ActionListener {
         else if (game.isUp()){
             snake.moveUp();
         }
-        food.setLocation(this);
+//        food.setLocation(this);
 
         System.out.println("Game is running");
         repaint();
